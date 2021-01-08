@@ -236,7 +236,6 @@ def init():
     countrycode = config['token']['countrycode']
     api = os.environ["API"]
     md5Switch = config.getboolean('setting','md5Switch')
-    peopleSwitch = config.getboolean('setting','peopleSwitch')
     key = os.environ["KEY"]
     print('配置文件读取完毕')
     logging.info('配置文件读取完毕')
@@ -246,7 +245,6 @@ def init():
             'countrycode': countrycode,
             'api': api,
             'md5Switch': md5Switch, 
-            'peopleSwitch':peopleSwitch,
             'key':key
         }
     return conf
