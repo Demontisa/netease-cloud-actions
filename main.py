@@ -286,8 +286,22 @@ def check():
 '''
 任务池
 '''
-
+def taskPool():
+    
+    config = init()
+    check() # 每天对api做一次检查
+    
+    print('账号: ' + config['uin'] + '  开始执行')
+    logging.info('账号: ' + config['uin'] + '  开始执行========================================')
+    if config['md5Switch'] is True:
+        print('MD5开关已打开,即将开始为你加密,密码不会上传至服务器,请知悉')
+        logging.info('MD5开关已打开,即将开始为你加密,密码不会上传至服务器,请知悉')
+        config['pwd'] = md5(config['pwd'])
+    task = Task(config['uin'], config['pwd'], config['key'], config['countrycode'])
+    task.start()
 
 '''
 程序的入口
 '''
+if __name__ == '__main__':
+    Timer(0, taskPool, ()).start()
