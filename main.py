@@ -1,11 +1,5 @@
 #coding:utf-8
-'''
-@author: ZainCheung
-@LastEditors: ZainCheung
-@description:网易云音乐全自动每日打卡300首歌升级账号等级,使用前请先到init.config文件配置
-@Date: 2020-06-25 14:28:48
-@LastEditTime: 2020-09-01 18:20:00
-'''
+
 from configparser import ConfigParser
 from threading import Timer
 import requests
