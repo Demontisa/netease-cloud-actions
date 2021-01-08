@@ -231,13 +231,13 @@ def init():
     global api # 初始化时设置api
     config = ConfigParser()
     config.read('init.config', encoding='UTF-8-sig')
-    uin = config['token']['account']
-    pwd = config['token']['password']
+    uin = os.environ["ACCOUNT"]
+    pwd = os.environ["PASSWORD"]
     countrycode = config['token']['countrycode']
-    api = config['setting']['api']
+    api = os.environ["API"]
     md5Switch = config.getboolean('setting','md5Switch')
     peopleSwitch = config.getboolean('setting','peopleSwitch')
-    key = config['setting']['key']
+    key = os.environ["KEY"]
     print('配置文件读取完毕')
     logging.info('配置文件读取完毕')
     conf = {
@@ -286,31 +286,7 @@ def check():
 '''
 任务池
 '''
-def taskPool():
-    
-    config = init()
-    check() # 每天对api做一次检查
-    if config['peopleSwitch'] is True:
-        print('多人开关已打开,即将开始执行多人任务')
-        logging.info('多人开关已打开,即将执行进行多人任务')
-        account = loadJson("account.json")
-        for man in account:
-            print('账号: ' + man['account'] + '  开始执行')
-            logging.info('账号: ' + man['account'] + '  开始执行========================================')
-            task = Task(man['account'], man['password'], man['key'])
-            task.start()
-            time.sleep(10)
-        print('所有账号已全部完成任务,服务进入休眠中,等待明天重新启动')
-        logging.info('所有账号已全部完成任务,服务进入休眠中,等待明天重新启动')
-    else :
-        print('账号: ' + config['uin'] + '  开始执行')
-        logging.info('账号: ' + config['uin'] + '  开始执行========================================')
-        if config['md5Switch'] is True:
-            print('MD5开关已打开,即将开始为你加密,密码不会上传至服务器,请知悉')
-            logging.info('MD5开关已打开,即将开始为你加密,密码不会上传至服务器,请知悉')
-            config['pwd'] = md5(config['pwd'])
-        task = Task(config['uin'], config['pwd'], config['key'], config['countrycode'])
-        task.start()
+
 
 '''
 程序的入口
