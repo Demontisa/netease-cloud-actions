@@ -22,5 +22,10 @@ jobs:
         pip install requests
         
     - name: Run main.py #运行main.py
+      env:
+        ACCOUNT: ${{ secrets.ACCOUNT }}
+        PASSWORD: ${{ secrets.PASSWORD }}
+        API: ${{ secrets.API }}
+        KEY: ${{ secrets.KEY }}
       run: |
         python main.py
