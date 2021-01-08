@@ -18,8 +18,7 @@ jobs:
         python-version: 3.9
     
     - name: Install requests #安装requests
-      run: |
-        pip install requests
+      run: pip install requests
         
     - name: Run main.py #运行main.py
       env:
@@ -27,5 +26,4 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         API: ${{ secrets.API }}
         KEY: ${{ secrets.KEY }}
-      run: |
-        python main.py
+      run: python main.py
