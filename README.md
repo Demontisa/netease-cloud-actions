@@ -29,4 +29,5 @@
     - `Name` 值为 `PASSWORD` `Value` 值为 `网易云音乐密码(md5)` 如需使用明文请修改init.config
     - `Name` 值为 `API` `Value` 值为 `API接口URL` 需自行搭建API接口：[netease-cloud-api](https://github.com/ZainCheung/netease-cloud-api)
     - `Name` 值为 `KEY` `Value` 值为 `企业微信机器人https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=48af13**************`中的`48af13**************`企业微信机器人创建方法需自行百度
+- 点击 `Actions` 再点击 `I understand my workflows, go ahead and enable them`
 - 首次使用需手动点击一次 `Start`
