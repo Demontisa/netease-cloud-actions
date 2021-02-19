@@ -22,7 +22,7 @@
 
 本项目使用方法：
 
-- Fork 本项目
+- Fork 本项目，不要忘记给我点个start哦(;´༎ຶٹ༎ຶ`)
 - 在Fork来的项目里点击`Setting --> Secrets --> Actions`
 - 点击 `New repository secret` 新建以下Secret
     - `Name` 值为 `ACCOUNT` `Value` 值为 `网易云音乐账号(手机号/网易邮箱)`
