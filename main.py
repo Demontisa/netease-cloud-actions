@@ -119,7 +119,7 @@ class Task(object):
         logging.info(r.text)
         if data['errmsg'] == 'ok':
             self.log('用户:' + self.name + '  企业微信机器人推送成功')
-            logging.info('用户:' + self.name + '  企业微信机器人酱推送成功')
+            logging.info('用户:' + self.name + '  企业微信机器人推送成功')
         else:
             self.log('用户:' + self.name + '  企业微信机器人推送失败,请检查key是否正确')
             logging.info('用户:' + self.name + '  企业微信机器人推送失败,请检查key是否正确')
